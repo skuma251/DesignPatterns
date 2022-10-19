@@ -1,8 +1,16 @@
-public class Person {
+import java.io.IOException;
 
-	private ProductMenu theProductMenu;
+public abstract class Person {
 
-	public void showMenu() {
+	protected ProductMenu theMeatMenu;
+	protected ProductMenu theProduceMenu;
+	protected Person (ProductMenu theMeatMenu, ProductMenu theProduceMenu)
+	{
+		this.theMeatMenu = theMeatMenu;
+		this.theProduceMenu = theProduceMenu;
+	}
+
+	public void showMenu() throws IOException {
 
 	}
 

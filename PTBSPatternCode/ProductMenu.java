@@ -1,6 +1,9 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public interface ProductMenu {
 
-	public abstract void showMenu();
+	public abstract void showMenu() throws IOException;
 
 	public abstract void showAddButton();
 
