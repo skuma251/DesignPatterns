@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface ProductMenu {
@@ -15,4 +14,5 @@ public interface ProductMenu {
 
 	public abstract void showLabels();
 
+	public abstract void createMenu(int userType) throws IOException;
 }

@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ProduceProductMenu implements ProductMenu {
 
@@ -9,13 +10,15 @@ public class ProduceProductMenu implements ProductMenu {
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		String line, productType, product;
+		ArrayList<String> products= new ArrayList<String>();
 		while ((line = br.readLine()) != null) {
 			productType = line.split(":")[0].toLowerCase();
 			product =  line.split(":")[1].toLowerCase();
 			if(productType.equals("produce")) {
-				System.out.println(product);
+				products.add(product);
 			}
 		}
+		System.out.println("Options in Produce menu are:" + products);
 
 	}
 
@@ -29,11 +32,16 @@ public class ProduceProductMenu implements ProductMenu {
 
 	@Override
 	public void showComboxes() {
-
+		System.out.println("Produce products menu");
 	}
 
 	@Override
 	public void showLabels() {
+
+	}
+
+	@Override
+	public void createMenu(int userType) throws IOException {
 
 	}
 

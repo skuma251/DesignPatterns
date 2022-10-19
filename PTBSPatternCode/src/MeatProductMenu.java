@@ -1,7 +1,6 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MeatProductMenu implements ProductMenu {
 
@@ -10,13 +9,15 @@ public class MeatProductMenu implements ProductMenu {
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		String line, productType, product;
+		ArrayList<String> products= new ArrayList<String>();
 		while ((line = br.readLine()) != null) {
 			productType = line.split(":")[0].toLowerCase();
 			product =  line.split(":")[1].toLowerCase();
 			if(productType.equals("meat")) {
-				System.out.println(product);
+				products.add(product);
 			}
 		}
+		System.out.println("Options in Meat menu are:" + products);
 	}
 
 	public void showAddButton() {
@@ -33,11 +34,27 @@ public class MeatProductMenu implements ProductMenu {
 
 
 	public void showComboxes() {
-
+		System.out.println("Meat products menu");
 	}
 
 	@Override
 	public void showLabels() {
+
+	}
+
+	public void createMenu(int user) throws IOException {
+		if(user == 0) {
+			System.out.println("Enter the item you want to buy");
+		}
+		else {
+			System.out.println("Enter the item you want to sell");
+			File offerings = new File("offerings.txt");
+			if (offerings.createNewFile()) {
+				System.out.println("File created: " + offerings.getName());
+			} else {
+				System.out.println("File already exists.");
+			}
+		}
 
 	}
 

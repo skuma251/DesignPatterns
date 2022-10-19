@@ -17,14 +17,20 @@ public class Facade {
 		System.out.println("Select the userType: \n 0: Buyer \n 1: Seller");
 		System.out.println("Enter userType:");
 		Scanner sc = new Scanner(System.in);
-		int UserType = Integer.parseInt(sc.next());
-		login(UserType);
-		createUser(UserType);
+		UserType = sc.nextInt();
+		login();
+
 	}
 
-	public void login(int UserType) throws IOException {
+	public void login() throws IOException {
 		Login user = new Login();
 		boolean loginStatus = user.login(UserType);
+		if(!loginStatus) {
+			System.out.println("Invalid Credential");
+		}
+		else {
+			createUser();
+		}
 	}
 
 //	public void addTrading() {
@@ -51,23 +57,35 @@ public class Facade {
 //
 //	}
 //
-	public void createUser(int userInfo) throws IOException {
-		if (userInfo == 0) {
+	// Implementing bridge pattern to show th menu items as per productInfo.txt
+	public void createUser() throws IOException {
+		System.out.println(UserType);
+		if (UserType == 0) {
 			Person buyer = new Buyer(new MeatProductMenu(), new ProduceProductMenu());
 			buyer.showMenu();
 		}
 		else {
 			Person seller = new Seller(new MeatProductMenu(), new ProduceProductMenu());
 			seller.showMenu();
+			createProductList(seller);
 		}
 
 	}
-//
-//	public void createProductList(int userType) {
-//		if(userType == 0) {
-//			Seller
-//		}
-//	}
+	// Factory Design Implementation.
+	public void createProductList(Person currentUser) throws IOException {
+		if (UserType == 0) {
+			System.out.println("Accessing menu based on products offering");
+			System.out.println(UserType);
+			ProductMenu menu = currentUser.CreateProductMenu();
+			menu.showComboxes();
+		}
+		else {
+			System.out.println("Create menu to sell your products");
+			ProductMenu menu = currentUser.CreateProductMenu();
+			menu.showComboxes();
+			menu.createMenu(UserType);
+		}
+	}
 //
 //	public void AttachProductToUser() {
 //

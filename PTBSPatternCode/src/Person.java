@@ -10,6 +10,10 @@ public abstract class Person {
 		this.theProduceMenu = theProduceMenu;
 	}
 
+	public Person() {
+
+	}
+
 	public void showMenu() throws IOException {
 
 	}
