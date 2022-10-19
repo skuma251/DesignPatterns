@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MeatProductMenu implements ProductMenu {
 
@@ -34,7 +35,7 @@ public class MeatProductMenu implements ProductMenu {
 
 
 	public void showComboxes() {
-		System.out.println("Meat products menu");
+
 	}
 
 	@Override
@@ -43,17 +44,18 @@ public class MeatProductMenu implements ProductMenu {
 	}
 
 	public void createMenu(int user) throws IOException {
+//		OfferingIterator offerings = new OfferingIterator(user);
+
 		if(user == 0) {
 			System.out.println("Enter the item you want to buy");
+			Scanner sc = new Scanner(System.in);
+			String item = sc.next();
+
 		}
 		else {
 			System.out.println("Enter the item you want to sell");
-			File offerings = new File("offerings.txt");
-			if (offerings.createNewFile()) {
-				System.out.println("File created: " + offerings.getName());
-			} else {
-				System.out.println("File already exists.");
-			}
+			Scanner sc = new Scanner(System.in);
+			String item = sc.next();
 		}
 
 	}

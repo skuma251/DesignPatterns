@@ -33,36 +33,13 @@ public class Facade {
 		}
 	}
 
-//	public void addTrading() {
-//
-//	}
-//
-//	public void viewTrading() {
-//
-//	}
-//
-//	public void decideBidding() {
-//
-//	}
-//
-//	public void discussBidding() {
-//
-//	}
-//
-//	public void submitBidding() {
-//
-//	}
-//
-//	public void remind() {
-//
-//	}
-//
 	// Implementing bridge pattern to show th menu items as per productInfo.txt
 	public void createUser() throws IOException {
 		System.out.println(UserType);
 		if (UserType == 0) {
 			Person buyer = new Buyer(new MeatProductMenu(), new ProduceProductMenu());
 			buyer.showMenu();
+			createProductList(buyer);
 		}
 		else {
 			Person seller = new Seller(new MeatProductMenu(), new ProduceProductMenu());
@@ -74,29 +51,50 @@ public class Facade {
 	// Factory Design Implementation.
 	public void createProductList(Person currentUser) throws IOException {
 		if (UserType == 0) {
-			System.out.println("Accessing menu based on products offering");
-			System.out.println(UserType);
+			System.out.println("Accessing menu based on products offering...............");
 			ProductMenu menu = currentUser.CreateProductMenu();
-			menu.showComboxes();
+			menu.createMenu(UserType);
 		}
 		else {
-			System.out.println("Create menu to sell your products");
+			System.out.println("Create menu to sell your products.......................");
 			ProductMenu menu = currentUser.CreateProductMenu();
-			menu.showComboxes();
 			menu.createMenu(UserType);
 		}
 	}
-//
-//	public void AttachProductToUser() {
-//
-//	}
-//
-//	public void SelectProduct() {
-//
-//	}
-//
-//	public void productOperation() {
-//
-//	}
+
+	public void AttachProductToUser() {
+
+	}
+
+	public void SelectProduct() {
+
+	}
+
+	public void productOperation() {
+
+	}
+	public void addTrading() {
+
+	}
+
+	public void viewTrading() {
+
+	}
+
+	public void decideBidding() {
+
+	}
+
+	public void discussBidding() {
+
+	}
+
+	public void submitBidding() {
+
+	}
+
+	public void remind() {
+
+	}
 
 }

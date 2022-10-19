@@ -1,7 +1,6 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ProduceProductMenu implements ProductMenu {
 
@@ -32,7 +31,7 @@ public class ProduceProductMenu implements ProductMenu {
 
 	@Override
 	public void showComboxes() {
-		System.out.println("Produce products menu");
+
 	}
 
 	@Override
@@ -42,6 +41,17 @@ public class ProduceProductMenu implements ProductMenu {
 
 	@Override
 	public void createMenu(int userType) throws IOException {
+
+		if(userType == 0) {
+			System.out.println("Enter the item you want to buy");
+			Scanner sc = new Scanner(System.in);
+			String item = sc.next();
+		}
+		else {
+			System.out.println("Enter the item you want to sell");
+			Scanner sc = new Scanner(System.in);
+			String item = sc.next();
+		}
 
 	}
 

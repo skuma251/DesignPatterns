@@ -1,12 +1,17 @@
-public class OfferingIterator {
+import java.io.*;
+import java.util.Iterator;
+import java.util.Scanner;
 
-	private OfferingList offeringList;
-
-	//private OfferingList offeringList;
+public class OfferingIterator implements ListIterator{
+	OfferingList[] offeringLists;
+	int pos = 0;
+	public OfferingIterator(OfferingList[] offeringsList) {
+	}
 
 	public boolean hasNext() {
 		return false;
 	}
+
 
 	public Offering Next() {
 		return null;
@@ -20,4 +25,7 @@ public class OfferingIterator {
 
 	}
 
+	public Iterator createIterator() {
+		return null;
+	}
 }

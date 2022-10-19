@@ -30,10 +30,8 @@ public class Seller extends Person {
 	public ProductMenu CreateProductMenu() {
 		switch (select) {
 			case 1:
-				System.out.println("Please enter Meat Item you want to sell");
 				return new MeatProductMenu();
 			case 2:
-				System.out.println("Please enter Meat Item you want to sell");
 				return new ProduceProductMenu();
 		}
 		return null;
