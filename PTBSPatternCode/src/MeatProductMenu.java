@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class MeatProductMenu implements ProductMenu {
-
+	String resultFile = "./src/UserProduct.txt";
 	public void showMenu() throws IOException {
 		String file = "./src/ProductInfo.txt";
 		FileReader fr = new FileReader(file);
@@ -56,7 +56,7 @@ public class MeatProductMenu implements ProductMenu {
 			System.out.println("Enter the item you want to sell");
 			Scanner sc = new Scanner(System.in);
 			String item = sc.next();
-			System.out.println("Your " + item + " has been listed to offerings.");
+			System.out.println("Product " + item + " have been listed to offerings.");
 		}
 
 	}

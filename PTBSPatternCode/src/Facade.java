@@ -37,7 +37,7 @@ public class Facade {
 		return loginStatus;
 	}
 
-	// Implementing bridge pattern to show th menu items as per productInfo.txt
+	// Implementing Bridge Design Pattern to show th menu items as per productInfo.txt
 	public void createUser() throws IOException {
 		if (UserType == 0) {
 			Person buyer = new Buyer(new MeatProductMenu(), new ProduceProductMenu());
@@ -54,7 +54,7 @@ public class Facade {
 
 	}
 
-	// Factory Design Implementation.
+	// Factory Design Implementation to create a menu based on user preference.
 	public void SelectProduct(Person currentUser) throws IOException {
 		if (UserType == 0) {
 			System.out.println("\n<---- Accessing products offered by the seller using Factory Design Pattern---->");
@@ -70,7 +70,7 @@ public class Facade {
 		}
 	}
 
-	// Visitor Design Pattern.
+	// Visitor Design Pattern
 	public void createProductList() throws IOException {
 		System.out.println("\n<----Invoking the accept method using Visitor Design Pattern---->");
 
@@ -93,15 +93,12 @@ public class Facade {
 		ProductIterator p = new ProductIterator(nProductList);
 		ClassProductList ic = new ClassProductList();
 		ListIterator itrerator = ic.createIterator();
-		System.out.println("Iterating over complete product available in ProductsInfo.txt");
+		System.out.println("Iterating over product available in ProductsInfo.txt.");
 		while(itrerator.hasNext()) {
 			Object object = itrerator.Next();
 			String productList = (String) object;
 			System.out.println("Products:" +productList);
 		}
-
-
-
 	}
 
 	public void productOperation() {
