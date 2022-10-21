@@ -44,7 +44,6 @@ public class MeatProductMenu implements ProductMenu {
 	public void showLabels() {
 
 	}
-
 	public void createMenu(int user) throws IOException {
 
 		if(user == 0) {
