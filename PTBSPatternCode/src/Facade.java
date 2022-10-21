@@ -72,30 +72,15 @@ public class Facade {
 	}
 
 	// Visitor Design Pattern
-	public void createProductList() throws IOException {
+	public void createProductList() {
 		System.out.println("\n<----Invoking the accept method using Visitor Design Pattern---->");
-		ClassProductList visitor = new ClassProductList();
-		visitor.accept(new NodeVisitor());
 
-		String productInfo = "./src/ProductInfo.txt";
-        FileReader fr = new FileReader(productInfo);
-		BufferedReader br = new BufferedReader(fr);
-		String line, product;
-        while ((line= br.readLine()) != null) {
-		product = line.split(":")[1].toLowerCase();
-		nProductList.add(product);
+		NodeVisitor visitor = new ReminderVisitor();
+		ClassProductList cp = new ClassProductList();
+		Trading tp = new Trading();
+		cp.accept(visitor);
+		tp.accept(visitor);
         }
-
-		ProductIterator p = new ProductIterator();
-//        String products = br.readLine();
-//        while (products != null) {
-//            productList[i] = products;
-//            i++;
-//            products = br.readLine();
-//        }
-//        ProductIterator p = new ProductIterator(productList);
-//        System.out.println("Choose the product");
-	}
 
 	public void productOperation() {
 

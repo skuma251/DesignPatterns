@@ -1,11 +1,7 @@
 public class ClassProductList {
 
 	public void accept(NodeVisitor visitor) {
-		visitor.visitProduct(new Product());
+		visitor.visitProduct(this);
 	}
-
-		public ListIterator createIterator() {
-			return new ProductIterator();
-		}
 
 }

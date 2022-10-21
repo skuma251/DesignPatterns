@@ -16,21 +16,6 @@ public class Main {
             facade.createProductList();
         }
 
-//        String productInfo = "./src/ProductInfo.txt";
-//        FileReader fr;
-//        String[] productList = new String[15];
-//        int i = 0;
-//        fr = new FileReader(productInfo);
-//        BufferedReader br = new BufferedReader(fr);
-//        String products = br.readLine();
-//        while (products != null) {
-//            productList[i] = products;
-//            i++;
-//            products = br.readLine();
-//        }
-//        ProductIterator p = new ProductIterator(productList);
-//        System.out.println("Choose the product");
-//        p.createIterator();
 
     }
 }
