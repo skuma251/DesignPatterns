@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MeatProductMenu implements ProductMenu {
 
 	public void showMenu() throws IOException {
-		String file = "C:\\Users\\skuma251\\Desktop\\SE\\Fall2022\\SER501\\assignmentDS\\DecoratorPattern\\src\\ProductInfo.txt";
+		String file = "./src/ProductInfo.txt";
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		String line, productType, product;
@@ -18,7 +18,9 @@ public class MeatProductMenu implements ProductMenu {
 				products.add(product);
 			}
 		}
+		System.out.println("<----Displaying the menu items based on the selected choice.---->");
 		System.out.println("Options in Meat menu are:" + products);
+
 	}
 
 	public void showAddButton() {
@@ -44,18 +46,18 @@ public class MeatProductMenu implements ProductMenu {
 	}
 
 	public void createMenu(int user) throws IOException {
-//		OfferingIterator offerings = new OfferingIterator(user);
 
 		if(user == 0) {
 			System.out.println("Enter the item you want to buy");
 			Scanner sc = new Scanner(System.in);
 			String item = sc.next();
-
+			System.out.println("Thank you for buying " +item + " .");
 		}
 		else {
 			System.out.println("Enter the item you want to sell");
 			Scanner sc = new Scanner(System.in);
 			String item = sc.next();
+			System.out.println("Your " + item + " has been listed to offerings.");
 		}
 
 	}

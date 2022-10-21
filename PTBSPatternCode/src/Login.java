@@ -5,10 +5,10 @@ public class Login {
     public boolean login(int UserType) throws IOException {
         String file;
         if (UserType == 0) {
-            file =  "C:\\Users\\skuma251\\Desktop\\SE\\Fall2022\\SER515\\Assignment7\\FacadePattern\\Facade\\src\\BuyerInfo.txt";
+            file =  "./src/BuyerInfo.txt";
         }
         else {
-            file = "C:\\Users\\skuma251\\Desktop\\SE\\Fall2022\\SER515\\Assignment7\\FacadePattern\\Facade\\src\\SellerInfo.txt";
+            file = "./src/SellerInfo.txt";
         }
 
         System.out.println("Enter your credentials");

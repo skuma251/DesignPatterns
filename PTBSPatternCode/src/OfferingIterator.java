@@ -1,31 +1,30 @@
-import java.io.*;
 import java.util.Iterator;
-import java.util.Scanner;
 
 public class OfferingIterator implements ListIterator{
-	OfferingList[] offeringLists;
-	int pos = 0;
-	public OfferingIterator(OfferingList[] offeringsList) {
+
+	private OfferingList offeringList;
+	public OfferingIterator() {
+
 	}
 
+	@Override
 	public boolean hasNext() {
 		return false;
 	}
 
-
+	@Override
 	public Offering Next() {
 		return null;
 	}
 
-	public void MoveToHead() {
+	@Override
+	public void MovetoHead() {
 
 	}
 
+	@Override
 	public void Remove() {
 
 	}
 
-	public Iterator createIterator() {
-		return null;
-	}
 }

@@ -1,19 +1,24 @@
-public class ProductIterator {
+import java.util.ArrayList;
+
+public class ProductIterator implements ListIterator {
 
 	private ClassProductList classProductList;
 
-	public boolean hasNext() {
+	@Override
+    public boolean hasNext() {
 		return false;
 	}
 
+	@Override
 	public Product Next() {
 		return null;
 	}
 
-	public void MoveToHead() {
+	@Override
+	public void MovetoHead() {
 
 	}
-
+	@Override
 	public void Remove() {
 
 	}
